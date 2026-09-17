@@ -34,8 +34,7 @@ build/libs/
 
 ## Links
 
-* GitHub: https://github.com/Lyriya-928/Server-Performance-HUD
-* Issues: https://github.com/Lyriya-928/Server-Performance-HUD/issues
+* modthrin: https://modrinth.com/mod/server-performance-hud
 
 ## Author
 
