@@ -1,28 +1,46 @@
-Server Performance HUD
-客户端 Fabric Mod，用于在 Minecraft HUD 中显示服务器 / Folia Region 的实时性能数据。
+# Server Performance HUD
 
-功能
-无需服务器安装 Mod，即可估算服务器 TPS
-服务器支持命令查询时，获取真实 TPS / MSPT
-支持 Folia Region 性能数据
-支持 BossBar Tag 与 Floating Tag 两种 HUD 形式
-可自定义服务器命令与文本解析规则
-环境
-项目	版本
-Minecraft	26.1.2
-Fabric Loader	>= 0.18.4
-Fabric API	0.155.2+26.1.2
-Java	>= 25
-Mod ID	server-performance-hud
-构建
+A client-side Fabric mod that displays real-time server and Folia Region performance information directly in the Minecraft HUD.
+
+## Features
+
+* Estimate server TPS without requiring the mod to be installed on the server
+* Retrieve actual TPS / MSPT when the server provides a compatible command
+* Support Folia Region performance data
+* Support two HUD display types: **BossBar Tag** and **Floating Tag**
+* Customizable server commands and text parsing rules
+
+## Environment
+
+| Project Version |                          |
+| --------------- | ------------------------ |
+| Minecraft       | 26.1.2                   |
+| Fabric Loader   | >= 0.18.4                |
+| Fabric API      | 0.155.2+26.1.2           |
+| Java            | >= 25                    |
+| Mod ID          | `server-performance-hud` |
+
+## Build
+
+```bash
 ./gradlew build
-产物位于 build/libs/。
+```
 
-仓库
-GitHub: https://github.com/Lyriya-928/Server-Performance-HUD
-Issues: https://github.com/Lyriya-928/Server-Performance-HUD/issues
-作者
-樱落逢尾春 (@Lyriya-928)
+The built JAR files are generated in:
 
-License
-MIT © 2026 樱落逢尾春
+```text
+build/libs/
+```
+
+## Links
+
+* GitHub: https://github.com/Lyriya-928/Server-Performance-HUD
+* Issues: https://github.com/Lyriya-928/Server-Performance-HUD/issues
+
+## Author
+
+[樱落逢尾春 (@Lyriya-928)](https://github.com/Lyriya-928)
+
+## License
+
+[MIT License](LICENSE) © 2026 樱落逢尾春
