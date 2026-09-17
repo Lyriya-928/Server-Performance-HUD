@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "server-performance-hud",
+  "version": "${version}",
+  "icon": "icon.png",
+  "name": "Server Performance HUD",
+  "description": "Client-side server and Folia region performance HUD.",
+  "authors": [
+    "樱落逢尾春"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Lyriya-928/Server-Performance-HUD",
+    "issues": "https://github.com/Lyriya-928/Server-Performance-HUD/issues",
+    "sources": "https://github.com/Lyriya-928/Server-Performance-HUD"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.saku.serverperformancehud.ServerPerformanceHudClient"],
+    "modmenu": ["dev.saku.serverperformancehud.ModMenuIntegration"]
+  },
+  "mixins": ["server-performance-hud.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "26.1.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

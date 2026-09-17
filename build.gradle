@@ -1,0 +1,50 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.15.5'
+}
+
+group = project.maven_group
+version = project.mod_version
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven { name = 'TemporaryLocal'; url = uri("$rootDir/.local-maven") }
+    maven { name = 'Terraformers'; url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+java { withSourcesJar() }
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test') {
+    failOnNoDiscoveredTests = false
+}
+
+tasks.register('foliaParserSelfTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.saku.serverperformancehud.parser.FoliaParserSelfTest'
+}
+
+tasks.named('check') {
+    dependsOn 'foliaParserSelfTest'
+}

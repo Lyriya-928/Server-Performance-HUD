@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.saku.serverperformancehud.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ClientPacketListenerMixin", "BossHealthOverlayAccessor"],
+  "injectors": {"defaultRequire": 1}
+}
