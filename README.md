@@ -43,4 +43,4 @@ build/libs/
 
 ## License
 
-[MIT License](LICENSE) © 2026 樱落逢尾春
+[MIT License](LICENSE) © 2026 Lili璃花
