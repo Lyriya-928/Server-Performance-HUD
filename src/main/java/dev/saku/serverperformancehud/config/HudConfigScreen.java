@@ -51,11 +51,11 @@ public final class HudConfigScreen extends Screen {
                                 ? "server_performance_hud.config.slot_enabled" : "server_performance_hud.config.slot_disabled", index + 1));
                     }).bounds(left + 12, row, 300, 20).build());
             addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.edit"),
-                    b -> minecraft.setScreen(new HudSlotScreen(this, config, index))).bounds(left + 330, row, 130, 20).build());
+                    b -> minecraft.gui.setScreen(new HudSlotScreen(this, config, index))).bounds(left + 330, row, 130, 20).build());
         }
         addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.save"), b -> closeAndSave())
                 .bounds(left + 150, height - 34, 100, 20).build());
-        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.cancel"), b -> minecraft.setScreen(parent))
+        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.cancel"), b -> minecraft.gui.setScreen(parent))
                 .bounds(left + 270, height - 34, 100, 20).build());
     }
 
@@ -66,7 +66,7 @@ public final class HudConfigScreen extends Screen {
         try { config.commandTimeoutSeconds = Math.max(1, Integer.parseInt(timeoutBox.getValue().trim())); } catch (NumberFormatException ignored) { }
         config.normalize();
         HudConfigStore.save(config);
-        minecraft.setScreen(parent);
+        minecraft.gui.setScreen(parent);
     }
     @Override public void onClose() { closeAndSave(); }
 

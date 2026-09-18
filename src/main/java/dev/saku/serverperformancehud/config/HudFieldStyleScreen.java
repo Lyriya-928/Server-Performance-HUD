@@ -33,7 +33,7 @@ public final class HudFieldStyleScreen extends Screen {
         addRenderableWidget(Checkbox.builder(Component.translatable("server_performance_hud.config.italic"), font).pos(x + 130, 89).selected(style.italic).onValueChange((b, v) -> style.italic = v).build());
         addRenderableWidget(Checkbox.builder(Component.translatable("server_performance_hud.config.shadow"), font).pos(x + 130, 116).selected(style.shadow).onValueChange((b, v) -> style.shadow = v).build());
         addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.save"), b -> save()).bounds(x, 180, 110, 20).build());
-        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.back"), b -> minecraft.setScreen(parent)).bounds(x + 120, 180, 110, 20).build());
+        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.back"), b -> minecraft.gui.setScreen(parent)).bounds(x + 120, 180, 110, 20).build());
     }
 
     private EditBox box(int x, int y, String hintKey, String value) {
@@ -43,7 +43,7 @@ public final class HudFieldStyleScreen extends Screen {
     private void save() {
         style.labelColor = label.getValue(); style.staticValueColor = staticColor.getValue();
         style.normalColor = normal.getValue(); style.warningColor = warning.getValue(); style.criticalColor = critical.getValue();
-        style.normalize(); minecraft.setScreen(parent);
+        style.normalize(); minecraft.gui.setScreen(parent);
     }
     @Override public void onClose() { save(); }
     @Override public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {

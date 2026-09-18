@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+.gradle-home/
+build/
+local.properties
+
+# Local Maven (temporary dependency staging)
+.local-maven/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+out/
+bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled / logs
+*.class
+*.log
+logs/

@@ -138,6 +138,6 @@ public final class ServerPerformanceHudClient implements ClientModInitializer {
     }
 
     private static ConnectionType connectionType(Minecraft client) {
-        return ConnectionTypeResolver.resolve(client.isSingleplayer(), client.getSingleplayerServer() != null);
+        return ConnectionTypeResolver.resolve(client.hasSingleplayerServer(), client.getSingleplayerServer() != null);
     }
 }

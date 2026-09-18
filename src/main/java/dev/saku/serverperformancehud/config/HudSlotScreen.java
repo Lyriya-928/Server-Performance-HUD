@@ -57,13 +57,13 @@ public final class HudSlotScreen extends Screen {
             }).bounds(left + column * 190, 136 + row * 24, 140, 20).build();
             fieldButtons.add(fieldButton);
             addRenderableWidget(fieldButton);
-            addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.style_button"), button -> minecraft.setScreen(new HudFieldStyleScreen(this, slot, field)))
+            addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.style_button"), button -> minecraft.gui.setScreen(new HudFieldStyleScreen(this, slot, field)))
                     .bounds(left + column * 190 + 145, 136 + row * 24, 45, 20).build());
         }
         refreshFieldButtons();
         int bottom = 136 + ((FIELDS.length + 1) / 2) * 24 + 8;
         addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.save"), button -> saveAndClose()).bounds(left, bottom, 110, 20).build());
-        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.back"), button -> minecraft.setScreen(parent)).bounds(left + 120, bottom, 110, 20).build());
+        addRenderableWidget(Button.builder(Component.translatable("server_performance_hud.config.back"), button -> minecraft.gui.setScreen(parent)).bounds(left + 120, bottom, 110, 20).build());
     }
 
     private void refreshFieldButtons() {
@@ -78,7 +78,7 @@ public final class HudSlotScreen extends Screen {
         try { slot.yOffset = Integer.parseInt(yOffsetBox.getValue().trim()); } catch (NumberFormatException ignored) { }
         config.normalize();
         HudConfigStore.save(config);
-        minecraft.setScreen(parent);
+        minecraft.gui.setScreen(parent);
     }
     @Override public void onClose() { saveAndClose(); }
 

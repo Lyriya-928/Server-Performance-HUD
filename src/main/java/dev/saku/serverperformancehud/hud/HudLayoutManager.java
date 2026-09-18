@@ -33,7 +33,7 @@ public final class HudLayoutManager {
     public int vanillaBossBarHeight() {
         Minecraft client = Minecraft.getInstance();
         if (client.gui == null) return VANILLA_BOSSBAR_START;
-        BossHealthOverlay overlay = client.gui.getBossOverlay();
+        BossHealthOverlay overlay = client.gui.hud.getBossOverlay();
         if (!(overlay instanceof dev.saku.serverperformancehud.mixin.BossHealthOverlayAccessor accessor)) return VANILLA_BOSSBAR_START;
         Map<UUID, LerpingBossEvent> events = accessor.serverPerformanceHud$getEvents();
         return VANILLA_BOSSBAR_START + events.size() * VANILLA_BOSSBAR_STEP;

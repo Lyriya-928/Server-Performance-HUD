@@ -25,7 +25,7 @@ public final class LocalMetricsProvider implements MetricsProvider {
     }
 
     public void tick() {
-        if (!running || !minecraft.isSingleplayer() || minecraft.player == null) return;
+        if (!running || !minecraft.hasSingleplayerServer() || minecraft.player == null) return;
         IntegratedServer server = minecraft.getSingleplayerServer();
         if (server == null) return;
         long nanos = server.getAverageTickTimeNanos();
