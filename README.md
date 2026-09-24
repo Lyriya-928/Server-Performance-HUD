@@ -34,7 +34,7 @@ build/libs/
 
 ## Links
 
-* modthrin: https://modrinth.com/mod/server-performance-hud
+* Modrinth: https://modrinth.com/mod/server-performance-hud
 
 ## Author
 
